@@ -6,12 +6,13 @@ applications.
 
 ## Installation 
 
-Use composer to add the package into your project
-using "composer require pacuna/schemas:dev-master".
+1. Use composer to add the package into your project
+using 
+`composer require pacuna/schemas:dev-master`
 
-1. Add 'Pacuna\Schemas\SchemasServiceProvider' to your app.php file in the
+2. Add 'Pacuna\Schemas\SchemasServiceProvider' to your app.php file in the
 services providers section.
-2. Add 'PGSchema' => 'Pacuna\Schemas\Facades\PGSchema' into the aliases
+3. Add 'PGSchema' => 'Pacuna\Schemas\Facades\PGSchema' into the aliases
 section
 
 ## Usage

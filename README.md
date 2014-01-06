@@ -36,3 +36,8 @@ schema (default)
 
 `PGSchema::drop($schemaName)`
 
+## Multi-tenancy Example (SaaS)
+
+Checkout this repo https://github.com/pacuna/laravel-multitenancy-schemas
+In the handlers folder you can find the code that contains calls to
+the package.

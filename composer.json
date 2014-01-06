@@ -1,6 +1,8 @@
 {
     "name": "pacuna/schemas",
-    "description": "",
+    "description": "Laravel package for managing postgresql schemas",
+    "keywords" : ["laravel", "postgres"],
+    "licence" : "MIT",
     "authors": [
         {
             "name": "Pablo Acuña",

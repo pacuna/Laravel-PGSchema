@@ -18,7 +18,10 @@ class SchemasServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		//
+        \App::bind('pgschema', function()
+        {
+            return new Schemas;
+        });
 	}
 
 	/**

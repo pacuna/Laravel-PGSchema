@@ -42,7 +42,7 @@ class Schemas
         $query = DB::statement('DROP SCHEMA '.$schemaName);
     }
 
-    public function migrate($schemaName)
+    public function migrate($schemaName, $args=[])
     {
         $this->switchTo($schemaName);
         if(!$this->tableExists($schemaName, 'migrations'))
@@ -50,7 +50,7 @@ class Schemas
             Artisan::call('migrate:install');
         }
 
-        Artisan::call('migrate');
+        Artisan::call('migrate', $args);
 
     }
 

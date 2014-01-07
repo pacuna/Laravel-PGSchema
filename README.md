@@ -38,7 +38,13 @@ schema (default)
 
 ### Migrate Schema
 
-`PGSchema::migrate($schemaName)`
+`PGSchema::migrate($schemaName, args[])`
+
+For example create a migrations in a custom path:
+`php artisan migrate:make create_dogs_table --create=dogs --path=app/database/migrations/foo`
+
+Then you can migrate some schema using this path
+`PGSchema::migrate($schemaName, ['--path' => 'app/database/migrations/foo'])`
 
 ## Multi-tenancy Example (SaaS)
 

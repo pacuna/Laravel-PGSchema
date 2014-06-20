@@ -53,5 +53,26 @@ class Schemas
         Artisan::call('migrate', $args);
 
     }
+    
+    public function migrateRefresh($schemaName, $args=[])
+    {
+        $this->switchTo($schemaName);
+
+        Artisan::call('migrate:refresh', $args);
+    }
+
+    public function migrateReset($schemaName, $args=[])
+    {
+        $this->switchTo($schemaName);
+
+        Artisan::call('migrate:reset', $args);
+    }
+
+    public function migrateRollback($schemaName, $args=[])
+    {
+        $this->switchTo($schemaName);
+
+        Artisan::call('migrate:rollback', $args);
+    }
 
 }

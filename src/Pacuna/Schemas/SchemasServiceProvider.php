@@ -18,10 +18,10 @@ class SchemasServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-        \App::bind('pgschema', function()
-        {
-            return new Schemas;
-        });
+	    \App::bind('pgschema', function()
+	    {
+		return new Schemas;
+	    });
 	}
 
 	/**
@@ -32,11 +32,11 @@ class SchemasServiceProvider extends ServiceProvider {
 	public function provides()
 	{
 		return array();
-    }
+	}
 
-    public function boot()
-    {
-        $this->package('pacuna/schemas');
-    }
+	public function boot()
+	{
+	    $this->package('pacuna/schemas');
+	}
 
 }

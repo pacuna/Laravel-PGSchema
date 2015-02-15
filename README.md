@@ -51,3 +51,8 @@ Then you can migrate some schema using this path
 Checkout this repo https://github.com/pacuna/laravel-multitenancy-schemas
 In the handlers folder you can find the code that contains calls to
 the package.
+
+
+## Laravel version
+
+Current package version works for Laravel 5. If you need Laravel 4 support checkout for the laravel4 branch.

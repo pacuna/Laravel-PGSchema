@@ -34,9 +34,4 @@ class SchemasServiceProvider extends ServiceProvider {
 		return array();
 	}
 
-	public function boot()
-	{
-	    $this->package('pacuna/schemas');
-	}
-
 }

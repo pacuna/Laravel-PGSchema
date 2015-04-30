@@ -27,6 +27,16 @@ class Schemas
         return false;
     }
 
+    public function schemaExists($schemaName)
+    {
+        $schema = DB::table('information_schema.schemata')
+            ->select('schema_name')
+            ->where('schema_name', '=', $schemaName)
+            ->count();
+
+        return ($schema > 0);
+    }
+
     public function create($schemaName)
     {
         $query = DB::statement('CREATE SCHEMA '.$schemaName);
@@ -53,7 +63,7 @@ class Schemas
         Artisan::call('migrate', $args);
 
     }
-    
+
     public function migrateRefresh($schemaName, $args=[])
     {
         $this->switchTo($schemaName);

@@ -49,7 +49,7 @@ class Schemas
 
     public function drop($schemaName)
     {
-        $query = DB::statement('DROP SCHEMA '.$schemaName);
+        $query = DB::statement('DROP SCHEMA '.$schemaName . ' CASCADE');
     }
 
     public function migrate($schemaName, $args=[])

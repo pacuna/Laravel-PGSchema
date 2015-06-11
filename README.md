@@ -4,10 +4,10 @@ With this package you can create, switch and drop postgresql schemas
 easily. This is very useful when you are working with multi-tenants
 applications.
 
-## Installation 
+## Installation
 
 1. Use composer to add the package into your project
-using 
+using
 `composer require pacuna/schemas:dev-master`
 
 2. Add 'Pacuna\Schemas\SchemasServiceProvider' to your app.php file in the

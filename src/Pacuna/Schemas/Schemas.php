@@ -151,4 +151,17 @@ class Schemas
 
         Artisan::call('migrate:rollback', $args);
     }
+
+    /**
+     * Return the current search path
+     *
+     * @return string
+     */
+    public function getSearchPath()
+    {
+        $query = DB::select('show search_path');
+        $searchPath = array_pop($query)->search_path;
+
+        return $searchPath;
+    }
 }

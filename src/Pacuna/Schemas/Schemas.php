@@ -80,11 +80,18 @@ class Schemas
     /**
      * Set the search_path to the schema name
      *
-     * @param string $schemaName
+     * @param string|array $schemaName
      */
     public function switchTo($schemaName = 'public')
     {
-        $query = DB::statement('SET search_path TO ' . $schemaName);
+        if (!is_array($schemaName)) {
+            $schemaName = [$schemaName];
+        }
+
+        $query = 'SET search_path TO ' . implode(',', $schemaName);
+
+
+        $result = DB::statement($query);
     }
 
     /**

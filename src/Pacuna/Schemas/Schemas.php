@@ -80,11 +80,18 @@ class Schemas
     /**
      * Set the search_path to the schema name
      *
-     * @param string $schemaName
+     * @param string|array $schemaName
      */
     public function switchTo($schemaName = 'public')
     {
-        $query = DB::statement('SET search_path TO ' . $schemaName);
+        if (!is_array($schemaName)) {
+            $schemaName = [$schemaName];
+        }
+
+        $query = 'SET search_path TO ' . implode(',', $schemaName);
+
+
+        $result = DB::statement($query);
     }
 
     /**
@@ -150,5 +157,18 @@ class Schemas
         $this->switchTo($schemaName);
 
         Artisan::call('migrate:rollback', $args);
+    }
+
+    /**
+     * Return the current search path
+     *
+     * @return string
+     */
+    public function getSearchPath()
+    {
+        $query = DB::select('show search_path');
+        $searchPath = array_pop($query)->search_path;
+
+        return $searchPath;
     }
 }

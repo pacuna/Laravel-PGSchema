@@ -74,7 +74,7 @@ class Schemas
      */
     public function create($schemaName)
     {
-        $query = DB::statement('CREATE SCHEMA ' . $schemaName);
+        $query = DB::statement('CREATE SCHEMA IF NOT EXISTS ' . $schemaName);
     }
 
     /**

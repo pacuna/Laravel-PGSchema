@@ -5,6 +5,7 @@ namespace Pacuna\Schemas;
 use DB;
 use Artisan;
 use Schema;
+use Config;
 
 /**
  * Class Schemas

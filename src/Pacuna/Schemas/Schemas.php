@@ -74,7 +74,7 @@ class Schemas
      */
     public function create($schemaName)
     {
-        $query = DB::statement('CREATE SCHEMA ' . $schemaName);
+        $query = DB::statement('CREATE SCHEMA "' . $schemaName . '"');
     }
 
     /**
@@ -101,7 +101,7 @@ class Schemas
      */
     public function drop($schemaName)
     {
-        $query = DB::statement('DROP SCHEMA '.$schemaName . ' CASCADE');
+        $query = DB::statement('DROP SCHEMA "' . $schemaName . '" CASCADE');
     }
 
     /**

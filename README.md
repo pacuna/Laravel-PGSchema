@@ -1,3 +1,7 @@
+[LOOKING FOR MAINTAINER]
+
+Please contact me if you are interested in maintaining this library. I no longer work with Laravel so I'm not able to keep up with the updates.
+
 # Laravel PGSchema
 
 With this package you can create, switch and drop postgresql schemas
